@@ -1,0 +1,59 @@
+*scratch_term.txt*  Open and close a scratch terminal buffer
+
+Author:  Shay Hill Pope <http://shayallenhill.com>
+License: Same terms as Vim itself (see |license|)
+
+Open a scratch terminal buffer in a new window. Destroy or recreate that
+terminal with a command. These terminal commands accept all arguments
+available to Vim |terminal|.
+
+                                                *ScratchTerm*
+:ScratchTerm            Open a terminal in Vim. The only difference between a
+                        terminal opened with `:ScratchTerm` and a terminal
+                        opened with `:term` is that the "scratch" terminal is
+                        marked with a buffer-local variable "scratch_term".
+
+                                                *ScratchTermV*
+:ScratchTermV           Open a scratch terminal in a vertical split.
+
+                                                *ScratchTermUnfocused*
+:ScratchTermUnocused    Open a scratch terminal but keep focus in current
+                        window.
+
+                                                *ScratchTermUnfocused*
+:ScratchTermUnocusedV   Open a vertical scratch terminal but keep focus in
+                        the current window.
+
+                                                *ScratchTermReplaceF*
+:ScratchTermReplaceF    Kill all open scratch terminals on the current tab and
+                        replace with a single, focused scratch terminal.
+
+                                                *ScratchTermReplaceFV*
+:ScratchTermReplaceFV   Kill all open scratch terminals on the current tab and
+                        replace with a single, vertical, focused scratch
+                        terminal.
+
+                                                *ScratchTermReplaceU*
+:ScratchTermReplaceU    Kill all open scratch terminals on the current tab and
+                        replace with a single scratch terminal. Keep focus in
+                        the current window.
+
+                                                *ScratchTermReplaceUV*
+:ScratchTermReplaceUV   Kill all open scratch terminals on the current tab and
+                        replace with a single, vertical scratch terminal. Keep
+                        focus in the current window.
+
+                                                *ScratchTermsKill*
+:ScratchTermsKill       Kill all open scratch terminals on the current tab.
+
+                                                *ScratchTermsClose*
+:ScratchTermsClose      Close all open scratch terminals on the current tab.
+                        The difference between this and `ScratchTermsKill` is
+                        that, if a process is running in the scratch terminal,
+                        you will see the usual warnings: "E948: Job still
+                        running (add !  to end the job)" or "E89: No write
+                        since last change for buffer [n] (add ! to override)"
+                        depending on what type of buffer you were in when you
+                        called the function.
+
+ vim:tw=78:et:ft=help:norl:
