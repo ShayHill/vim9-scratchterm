@@ -4,6 +4,8 @@ Open terminals without losing focus. Close terminals with minimum disruption.
 
 I often want to run a script or some tests in a terminal that *may* have useful output. This typically involves "tabbing over" to a terminal, starting a script, then tabbing back to read the output or close the terminal. Within Vim, I can do the same without the tabbing, but it is still necessary to switch buffers. This plugin defines commands to accomplish this with less distraction.
 
+[See it in action](https://youtu.be/jmS3kAM-gck)
+
 ## Commands
 
 The terminal launching commands accept all arguments available to the vim `:terminal`. E.g., `:ScratchTerm python`.
