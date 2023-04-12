@@ -1,4 +1,4 @@
-# scratch_term
+# vim9-scratchterm
 
 Open terminals without losing focus. Close terminals with minimum disruption.
 
@@ -17,14 +17,14 @@ The terminal launching commands accept all arguments available to the vim `:term
 :ScratchTerm            Open a terminal in Vim. The only difference between a
                         terminal opened with `:ScratchTerm` and a terminal
                         opened with `:term` is that the "scratch" terminal is
-                        marked with a buffer-local variable "scratch_term".
+                        marked with a buffer-local variable "vim9-scratchterm".
 ```
 
 ### ScratchTermUnfocused
 
 ```
                                                 *ScratchTermUnfocused*
-:ScratchTermUnocused    Open a scratch terminal but keep focus in the current
+:ScratchTermUnfocused   Open a scratch terminal but keep focus in the current
                         window.
 ```
 
@@ -50,7 +50,7 @@ All commands have a +V variant to run the command in a vertical terminal.
 :ScratchTermV           Open a scratch terminal in a vertical split.
 
                                                 *ScratchTermUnfocused*
-:ScratchTermUnocusedV   Open a vertical scratch terminal but keep focus in the
+:ScratchTermUnfocusedV  Open a vertical scratch terminal but keep focus in the
                         current window.
 
                                                 *ScratchTermReplaceFV*
@@ -70,8 +70,8 @@ Here are some example mappings for refactoring a module with existing tests in P
 
 ```
 # re-run the last test in an unfocused terminal
-nnoremap <F7> :update<CR>:ScratchTermReplaceFV pytest<t_ku><CR>
-inoremap <F7> <ESC>:update<CR>:ScratchTermReplaceFV pytest<t_ku><CR>
+nnoremap <F7> :update<CR>:ScratchTermReplaceUV pytest<t_ku><CR>
+inoremap <F7> <ESC>:update<CR>:ScratchTermReplaceUV pytest<t_ku><CR>
 
 # kill ScratchTerms
 tmap <F4> <C-w>:ScratchTermsKill<CR>
@@ -92,16 +92,16 @@ This is also good for formatters, "fixing" linters, and other scripts with (at l
 
 ```
 # Windows
-git clone https://www.github.com/ShayHill/scratch_term ~\vimfiles\pack\plugins\start
+git clone https://www.github.com/ShayHill/vim9-scratchterm ~\vimfiles\pack\plugins\start
 
 # Linux
-git clone https://www.github.com/ShayHill/scratch_term ~/.vim/pack/plugins/start
+git clone https://www.github.com/ShayHill/vim9-scratchterm ~/.vim/pack/plugins/start
 
-If you're cloning in, cd in Vim to the `pack/whatever/whatever/scratch_term/doc`
+If you're cloning in, cd in Vim to the `pack/whatever/whatever/vim9-scratchterm/doc`
 directory and run `:helptags`
 
 # with minpac
-call minpac#add('shayhill/scratch_term')
+call minpac#add('shayhill/vim9-scratchterm')
 ```
 
 

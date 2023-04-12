@@ -17,11 +17,11 @@ available to Vim |terminal|.
 :ScratchTermV           Open a scratch terminal in a vertical split.
 
                                                 *ScratchTermUnfocused*
-:ScratchTermUnocused    Open a scratch terminal but keep focus in current
+:ScratchTermUnfocused   Open a scratch terminal but keep focus in current
                         window.
 
                                                 *ScratchTermUnfocused*
-:ScratchTermUnocusedV   Open a vertical scratch terminal but keep focus in
+:ScratchTermUnfocusedV  Open a vertical scratch terminal but keep focus in
                         the current window.
 
                                                 *ScratchTermReplaceF*
