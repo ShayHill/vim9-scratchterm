@@ -104,4 +104,8 @@ directory and run `:helptags`
 call minpac#add('shayhill/vim9-scratchterm')
 ```
 
+## Similar Plugins
+
+[habamax/vim-shout](https://github.com/habamax/vim-shout) will also simply (even more simply) capture and display output from terminal commands. Vim9-Scratchterm lies somewhere between [habamax/vim-shout](https://github.com/habamax/vim-shout) and a full Vim terminal buffer. If you don't need REPL or multiple windows, you might prefer [habamax/vim-shout](https://github.com/habamax/vim-shout).
+
 
