@@ -5,12 +5,25 @@ vim9script
 # it as a scratch buffer. This allows us to kill all scratch terminals in the
 # current view with a single function.
 
+
+if v:version < 900
+    finish
+endif
+
+
 if exists("g:loaded_scratch_term")
     finish
 endif
 g:loaded_scratch_term = 1
 
-
+var coreutils_exe = ''
+if executable('coreutils.exe')
+    coreutils_exe = 'coreutils.exe'
+    elseif exists('g:coreutils_exe')
+        coreutils_exe = g:coreutils_exe
+    else
+        coreutils_exe = ''
+endif 
 # -----------------------------------------------------------------------------#
 #
 #  Identify scratch terminals
@@ -99,24 +112,24 @@ command! ScratchTermsClose call KillOrCloseScratchTerms(v:false)
 
 # open a horizontal scratch terminal. focus on terminal
 command! -nargs=* -complete=file ScratchTerm
-    \ execute 'term <args>' | b:scratch_term = 1
+    \ silent execute 'term ' .. coreutils_exe .. ' <args>' | b:scratch_term = 1
 
 
 # open a vertical scratch terminal. focus on terminal
 command! -nargs=* -complete=file ScratchTermV
-    \ execute 'vert term <args>' | b:scratch_term = 1
+    \ silent execute 'vert term ' .. coreutils_exe .. ' <args>' | b:scratch_term = 1
 
 
 # Replace all open scratch terminals with a new scratch terminal.
 command! -nargs=* -complete=file ScratchTermReplaceF
     \ KillOrCloseScratchTerms(v:true) |
-    \ execute 'term <args>' | b:scratch_term = 1
+    \ silent execute 'term ' .. coreutils_exe .. ' <args>' | b:scratch_term = 1
 
 
 # Replace all open scratch terminals with a new vertical scratch terminal.
 command! -nargs=* -complete=file ScratchTermReplaceFV
     \ KillOrCloseScratchTerms(v:true) |
-    \ execute 'vert term <args>' | b:scratch_term = 1
+    \ silent execute 'vert term ' .. coreutils_exe .. ' <args>' | b:scratch_term = 1
 
 
 # -----------------------------------------------------------------------------#
